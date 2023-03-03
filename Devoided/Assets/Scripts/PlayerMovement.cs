@@ -16,16 +16,17 @@ public class PlayerMovement : MonoBehaviour {
          if (Input.GetKey ("w")) {
              pos.y += speed * Time.deltaTime;
          }
-         if (Input.GetKey ("s")) {
+         else if (Input.GetKey ("s")) {
              pos.y -= speed * Time.deltaTime;
          }
-         if (Input.GetKey ("d")) {
+         else if (Input.GetKey ("d")) {
              pos.x += speed * Time.deltaTime;
          }
-         if (Input.GetKey ("a")) {
+         else if (Input.GetKey ("a")) {
              pos.x -= speed * Time.deltaTime;
          }
          transform.parent.position += pos;
+         transform.rotation = Quaternion.identity;
          updateAnimation(pos);
          last = Vector3.Normalize(pos);
      }
