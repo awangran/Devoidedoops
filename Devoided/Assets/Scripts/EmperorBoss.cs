@@ -5,7 +5,7 @@ using UnityEngine;
 public class EmperorBoss : MonoBehaviour
 {   
     private int health = 100;
-    public GameObject player;
+    public Player player;
     public ProjectileBehavior projectilePrefab;
     public Transform launchOffset;
     public float delay = 4;
@@ -18,9 +18,9 @@ public class EmperorBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //collision detection like if hit then change boss bar
-
-        //also attack
+        if (health <= 0) {
+            StartCoroutine(death());
+        }
         if (canAttack) {
             StartCoroutine(AttackAfterTime(delay));
         }
@@ -34,5 +34,15 @@ public class EmperorBoss : MonoBehaviour
      canAttack = false;
      yield return new WaitForSeconds(time);
     gameObject.GetComponent<Animator>().SetTrigger("Attack");
+ }
+ void takeDamage(int damage) {
+    Debug.Log(damage);
+    health -= damage;
+ }
+ IEnumerator death() {
+    gameObject.GetComponent<Animator>().Play("Death");
+    yield return new WaitForSeconds(4);
+    StartCoroutine(player.upgradeSword());
+    Destroy(gameObject);
  }
 }

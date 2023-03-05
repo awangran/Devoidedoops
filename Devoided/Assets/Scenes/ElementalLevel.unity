@@ -153,7 +153,7 @@ Transform:
   m_Children:
   - {fileID: 1071951536}
   m_Father: {fileID: 912187586}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &70035734
 MonoBehaviour:
@@ -168,8 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSword: 0
-  delay: 0.3
+  delay: 0.4
   weaponAnimator: {fileID: 1071951538}
+  circleOrigin: {fileID: 1700779497}
+  radius: 0.1
 --- !u!1 &463498605
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +255,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -437,7 +439,7 @@ GameObject:
   - component: {fileID: 562308328}
   m_Layer: 0
   m_Name: EmperorBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,16 +471,16 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.0961594, y: 0.23008586}
       - {x: 0.002860859, y: 0.25215545}
-      - {x: -0.15587829, y: 0.22554255}
-      - {x: -0.16135415, y: 0.13989845}
-      - {x: -0.1703075, y: 0.049309183}
+      - {x: -0.13028759, y: 0.19762549}
+      - {x: -0.14274275, y: 0.12826633}
+      - {x: -0.1330847, y: 0.042329893}
       - {x: -0.17577508, y: -0.0969167}
       - {x: -0.15244606, y: -0.13007043}
       - {x: -0.15864126, y: -0.18614653}
       - {x: -0.16193606, y: -0.23462918}
       - {x: 0.14224833, y: -0.23008588}
       - {x: 0.14594483, y: -0.110857084}
-      - {x: 0.15371835, y: 0.04198271}
+      - {x: 0.10253703, y: -0.006872207}
       - {x: 0.12724352, y: 0.1291931}
       - {x: 0.11953174, y: 0.18010937}
 --- !u!50 &562308324
@@ -600,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fc70e894324a2adb69d8a783085453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 912187585}
+  player: {fileID: 912187587}
   projectilePrefab: {fileID: 6694317612003271427, guid: dd9661c2cf047337a9bf83a20a9c82fa, type: 3}
   launchOffset: {fileID: 463498606}
   delay: 3
@@ -896,36 +898,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!1 &838020549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 838020550}
-  m_Layer: 0
-  m_Name: SwordTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &838020550
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838020549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 912187586}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &840074709
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840074709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.781765, y: -1.6727276, z: -10}
+  m_LocalPosition: {x: 2.353765, y: -0.99772763, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 541229972}
@@ -1023,11 +995,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912187585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.57, y: -2, z: 0}
+  m_LocalPosition: {x: 3.142, y: -1.325, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 519420032}
-  - {fileID: 838020550}
   - {fileID: 70035733}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1247,6 +1218,7 @@ GameObject:
   - component: {fileID: 1071951536}
   - component: {fileID: 1071951537}
   - component: {fileID: 1071951538}
+  - component: {fileID: 1071951540}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -1262,9 +1234,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071951535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.067, y: -0.067, z: 0}
+  m_LocalPosition: {x: 0.084, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1700779497}
   m_Father: {fileID: 70035733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1339,6 +1312,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!58 &1071951540
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071951535}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02273124, y: 0.023927523}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &1272000341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1343,7 @@ GameObject:
   - component: {fileID: 1272000342}
   m_Layer: 0
   m_Name: DeathBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1581,3 +1570,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1700779496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700779497}
+  m_Layer: 0
+  m_Name: CircleOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700779497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700779496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0201, y: 0.0248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1071951536}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

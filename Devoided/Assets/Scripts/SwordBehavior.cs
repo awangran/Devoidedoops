@@ -8,6 +8,8 @@ public class SwordBehavior : MonoBehaviour
     private bool attackBlocked = false;
     public float delay = 0.3f;
     public Animator weaponAnimator;
+    public Transform circleOrigin;
+    public float radius = 0.1f;
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +20,10 @@ public class SwordBehavior : MonoBehaviour
             return;
         weaponAnimator.SetTrigger("Attack");
         attackBlocked = true;
+        foreach (Collider2D i in Physics2D.OverlapCircleAll(circleOrigin.position, radius)) {
+            if (i.gameObject.tag == "Enemy")
+                i.gameObject.SendMessage("takeDamage", 10);
+        }
         StartCoroutine(delayAttack());
     }
     IEnumerator delayAttack() {

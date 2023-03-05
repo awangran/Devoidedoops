@@ -84,4 +84,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         spriteRenderer.material.color = new Color(1, 1, 1, 1);
     }
+    public IEnumerator upgradeSword() {
+        weapon.isSword = true;
+        weapon.weaponAnimator.Play("SwordUpgrade");
+        yield return new WaitForSeconds(2.8f);
+    }
 }
