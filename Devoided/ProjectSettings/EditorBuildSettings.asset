@@ -12,4 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ElementalLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c968f77dd8a4a7de5aa6a2e89ccc647b, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 541fb07f7d8138fbe91e89cf0ff2d34c, type: 2}
