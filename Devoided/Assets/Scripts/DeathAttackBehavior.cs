@@ -12,7 +12,6 @@ public class DeathAttackBehavior : MonoBehaviour
     IEnumerator attack() {
         yield return new WaitForSeconds(1.1f);
         foreach (Collider2D i in Physics2D.OverlapCircleAll(gameObject.transform.position, gameObject.GetComponent<CircleCollider2D>().radius)) {
-            Debug.Log(i.gameObject.name);
             if (i.gameObject.name == "Player")
                 i.gameObject.SendMessage("hitPlayer", 10);
         }

@@ -30,7 +30,6 @@ public class DeathBoss : MonoBehaviour
         gameObject.GetComponent<Animator>().ResetTrigger("Attack");
     }
      IEnumerator AttackAfterTime(float time) {
-        Debug.Log("deathAttak");
      canAttack = false;
      yield return new WaitForSeconds(time);
     gameObject.GetComponent<Animator>().SetTrigger("Attack");
