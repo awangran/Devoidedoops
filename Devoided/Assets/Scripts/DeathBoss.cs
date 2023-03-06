@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmperorBoss : MonoBehaviour
-{   
+public class DeathBoss : MonoBehaviour
+{
     private int health = 100;
     public Player player;
     public ProjectileBehavior projectilePrefab;
-    public Transform launchOffset;
     public float delay = 4;
     private bool canAttack = true;
     void Start()
@@ -27,7 +26,7 @@ public class EmperorBoss : MonoBehaviour
     }
     void Attack() {
         canAttack = true;
-        Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
+        Instantiate(projectilePrefab, player.gameObject.transform.position, transform.rotation);
         gameObject.GetComponent<Animator>().ResetTrigger("Attack");
     }
      IEnumerator AttackAfterTime(float time) {
