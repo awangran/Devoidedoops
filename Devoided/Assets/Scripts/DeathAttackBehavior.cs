@@ -7,12 +7,16 @@ public class DeathAttackBehavior : MonoBehaviour
     public int damage;
     void Start()
     {
-        
+        StartCoroutine(attack());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    IEnumerator attack() {
+        yield return new WaitForSeconds(1.1f);
+        foreach (Collider2D i in Physics2D.OverlapCircleAll(gameObject.transform.position, gameObject.GetComponent<CircleCollider2D>().radius)) {
+            Debug.Log(i.gameObject.name);
+            if (i.gameObject.name == "Player")
+                i.gameObject.SendMessage("hitPlayer", 10);
+        }
+        yield return new WaitForSeconds(1.15f);
+        Destroy(gameObject);
     }
 }

@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6694317612003271426}
   - component: {fileID: 6694317612003271425}
   - component: {fileID: 6694317612003271424}
-  - component: {fileID: 6694317612003271427}
+  - component: {fileID: 4643617730800049041}
   m_Layer: 0
   m_Name: DeathAttack
   m_TagString: Untagged
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &6694317612003271427
+--- !u!114 &4643617730800049041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,8 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6694317612003271454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c24ca5a37c94202439d3275521ba1d16, type: 3}
+  m_Script: {fileID: 11500000, guid: f68a380a9169879bfb6d1bd0e01beb47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  damage: 15
+  damage: 25

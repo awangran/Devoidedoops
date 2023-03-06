@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DeathBoss : MonoBehaviour
 {
-    private int health = 100;
+    private int health = int.MaxValue;
     public Player player;
-    public ProjectileBehavior projectilePrefab;
+    public DeathAttackBehavior projectilePrefab;
     public float delay = 4;
     private bool canAttack = true;
     void Start()
@@ -30,17 +30,23 @@ public class DeathBoss : MonoBehaviour
         gameObject.GetComponent<Animator>().ResetTrigger("Attack");
     }
      IEnumerator AttackAfterTime(float time) {
+        Debug.Log("deathAttak");
      canAttack = false;
      yield return new WaitForSeconds(time);
     gameObject.GetComponent<Animator>().SetTrigger("Attack");
  }
  void takeDamage(int damage) {
     health -= damage;
- }
+ StartCoroutine(flashColor(new Color(1, 0, 0, 0.7f)));
+    }
+    IEnumerator flashColor(Color color) {
+        gameObject.GetComponent<SpriteRenderer>().material.color = color;
+        yield return new WaitForSeconds(0.15f);
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
+    }
  IEnumerator death() {
     gameObject.GetComponent<Animator>().Play("Death");
     yield return new WaitForSeconds(4);
-    StartCoroutine(player.upgradeSword());
     Destroy(gameObject);
  }
 }

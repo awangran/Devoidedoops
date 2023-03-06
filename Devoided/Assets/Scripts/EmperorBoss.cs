@@ -37,7 +37,13 @@ public class EmperorBoss : MonoBehaviour
  }
  void takeDamage(int damage) {
     health -= damage;
- }
+    StartCoroutine(flashColor(new Color(1, 0, 0, 0.7f)));
+    }
+    IEnumerator flashColor(Color color) {
+        gameObject.GetComponent<SpriteRenderer>().material.color = color;
+        yield return new WaitForSeconds(0.15f);
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
+    }
  IEnumerator death() {
     gameObject.GetComponent<Animator>().Play("Death");
     yield return new WaitForSeconds(4);
