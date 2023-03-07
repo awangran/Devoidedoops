@@ -6,7 +6,6 @@ using UnityEngine.AddressableAssets;
 
 public class NPC : MonoBehaviour
 {
-    private CircleCollider2D talkingArea;
     public GameObject player;
     private GameObject speechBubble;
     private CircleCollider2D speechCollider;

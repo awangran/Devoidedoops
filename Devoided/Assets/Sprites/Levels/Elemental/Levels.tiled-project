@@ -4,7 +4,9 @@
     ],
     "extensionsPath": "extensions",
     "folders": [
-        "."
+        ".",
+        "../Spaceship",
+        "../../../../../../../Downloads/1. space and spaceship"
     ],
     "propertyTypes": [
     ]
