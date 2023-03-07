@@ -1062,8 +1062,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 912187587}
-  projectilePrefab: {fileID: 0}
-  delay: 12
+  projectilePrefab: {fileID: 1161407110940986279, guid: e25f6ee2e1510635f8bfcdd594e6984e, type: 3}
+  delay: 4
+  cam: {fileID: 519420031}
 --- !u!1001 &673319490
 PrefabInstance:
   m_ObjectHideFlags: 0
