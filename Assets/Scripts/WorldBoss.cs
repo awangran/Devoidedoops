@@ -60,7 +60,7 @@ public class WorldBoss : MonoBehaviour
     }
     Vector3 getRandomScreenPos() {
         Vector3 pos = Vector3.zero;
-        pos.x = (Screen.width / 8) * Random.Range(1, 5);
+        pos.x = (Screen.width / 2);
         pos.y = Screen.height * 1.5f;
         return cam.ScreenToWorldPoint(pos);
     }

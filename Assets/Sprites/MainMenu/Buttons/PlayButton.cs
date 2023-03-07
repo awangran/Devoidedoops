@@ -9,6 +9,6 @@ public class PlayButton : MainMenuButton
     public string startScene;
 
     public override void doStuff() {
-        SceneManager.LoadScene(startScene, LoadSceneMode.Additive);
+        SceneManager.LoadScene(startScene, LoadSceneMode.Single);
     }
 }
